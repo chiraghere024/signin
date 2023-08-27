@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: dodgerblue;
+}
+#webform, #portfolio {
+display: none;
+padding: 20px;
+background-color:lightcyan ;
+}
+nav {
+margin-bottom: 20px;
+padding: 10px;
+text-decoration: black;
+}
+nav a {
+padding: 10px 15px;
+text-decoration: none;
+border: 1px solid black;
+margin-right: 5px;
+}
+nav a.active {
+background-color: black;
+color: white;
+}
+.projects, .skills {
+margin-top: 20px;
+}
+.project-item, .skill-item {
+margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+<nav>
+<a href="#" id="formLink">Student Details Form</a>
+<a href="#" id="portfolioLink">Student Portfolio</a>
+</nav>
+<div id="webform">
+<h2>Student Details Form</h2>
+<form>
+<label for="name">Name:</label><br>
+<input type="text" id="name" name="name"><br><br>
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email"><br><br>
+<input type="submit" value="Submit">
+</form>
+</div>
+<div id="portfolio">
+<h2>About Me</h2>
+<p>Hello! I'm a passionate student currently learning web development. I love building
+meaningful projects and exploring new technologies.</p>
+<div class="projects">
+<h3>Projects</h3>
+<div class="project-item">
+<h4>Project 1</h4>
+<p>Description about project 1.</p>
+</div>
+<div class="project-item">
+<h4>Project 2</h4>
+<p>Description about project 2.</p>
+</div>
+</div>
+<div class="skills">
+<h3>Skills</h3>
+<div class="skill-item">HTML & CSS</div>
+<div class="skill-item">JavaScript</div>
+<div class="skill-item">Python</div>
+</div>
+</div>
+<script>
+document.getElementById('formLink').addEventListener('click', function(e) {
+e.preventDefault();
+document.getElementById('webform').style.display = 'block';
+document.getElementById('portfolio').style.display = 'none';
+e.target.classList.add('active');
+document.getElementById('portfolioLink').classList.remove('active');
+});
+document.getElementById('portfolioLink').addEventListener('click', function(e) {
+e.preventDefault();
+document.getElementById('webform').style.display = 'none';
+document.getElementById('portfolio').style.display = 'block';
+e.target.classList.add('active');
+document.getElementById('formLink').classList.remove('active');
+});
+</script>
+</body>
+</html>
